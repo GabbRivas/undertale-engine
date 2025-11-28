@@ -3,21 +3,25 @@
 [ext_resource type="FontFile" uid="uid://bjruhd22ivojd" path="res://Fonts/Determination Mono.ttf" id="1_dknsr"]
 [ext_resource type="Script" uid="uid://c25jg80d4407b" path="res://Scripts/Typer/text_typer.gd" id="1_iirfl"]
 
-[node name="TextTyper" type="RichTextLabel" groups=["Typer"]]
+[node name="TextTyper" type="Control" groups=["Typer"]]
+clip_contents = true
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -100.0
-offset_bottom = -350.0
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/outline_size = 8
+script = ExtResource("1_iirfl")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 180.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_dknsr")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "RichTextLabel"
-fit_content = true
+text = "[rainbow]RichTextLabel"
 scroll_active = false
-script = ExtResource("1_iirfl")
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
