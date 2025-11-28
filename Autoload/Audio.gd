@@ -5,7 +5,8 @@ extends Node
 	"default": load("res://Layouts/audio_bus_layout.tres"),
 }
 @onready var VOICES = {
-	"default": [ preload("res://Audio/Voices/Default_Talk.wav") ],
+	"voice.default": [ preload("res://Audio/Voices/Default_Talk.wav") ],
+	"voice.narrator": [ preload("res://Audio/Voices/Narrator_Voice.ogg") ]
 	# Add more: "voice_key": [ preload(...), preload(...) ]
 }
 
@@ -50,17 +51,6 @@ func stopBGM(channel:Variant)->void:
 		BGM_LIST[channel].stop()
 		BGM_LIST[channel].queue_free()
 		BGM_LIST.erase(channel)
-
-func play_voice(voice_key:String) -> void:
-	if not VOICES.has(voice_key):
-		if VOICES.has("default"):
-			play_voice("default")
-		return
-	var samples : Resource = VOICES[voice_key]
-	if samples.empty():
-		return
-	var sample : Resource = samples[randi() % samples.size()]
-	playSFX(sample, "SFX") 
 
 func register_voice(voice_key:String, sample:AudioStream) -> void:
 	if not VOICES.has(voice_key):
