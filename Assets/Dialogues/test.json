@@ -1,0 +1,8 @@
+{
+	"en" : {
+		"dialogues":  [
+			"* [color=red]Heya[/color]\n		{choice:0}Yes!		{choice:1}No!", 
+			"* You've been busy, huh?"
+		]
+	}
+}

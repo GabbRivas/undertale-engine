@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://btsdgvrekd7bx"]
+
+[ext_resource type="Script" uid="uid://cg31dbksjkmk5" path="res://Scenes/Test/test_scene.gd" id="1_436f1"]
+[ext_resource type="PackedScene" uid="uid://bbgk1rod4d3b6" path="res://Scenes/Typer/typer.tscn" id="2_436f1"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_436f1")
+
+[node name="Typer" parent="." instance=ExtResource("2_436f1")]
+offset_left = 56.0
+offset_top = 217.0
+offset_right = 56.0
+offset_bottom = 217.0
